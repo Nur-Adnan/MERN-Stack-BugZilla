@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -15,7 +16,7 @@ const app = express();
 app.use(express.json());
 
 const dbURI =
-  "mongodb+srv://nuradnanchowdhuryestobdho:ilzTrQUb8GqmdF8c@bugzilla.fhaml6o.mongodb.net/BugZilla?retryWrites=true&w=majority&appName=bugZilla";
+  process.env.MONGODB_URI;
 mongoose
   .connect(dbURI, {
     useNewUrlParser: true,
